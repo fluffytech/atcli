@@ -1,0 +1,25 @@
+# To enable left->right rendering then first line must be a comment with LR literal
+# Tasks have optional trailers delimited by brackets.
+# For parent tasks the trailers specify the logic gate type (AND, OR, SEQ).
+# For leaf tasks the trailers specify the likelihood (remote, unlikely, credible, likely, almost certain)
+Root Task (or)
+    # Subtasks are defined using space indentation. Tabs are not supported.
+    Sub Task 1 (seq)
+        Run (unlikely)
+        Jump (Realistic Possibility)
+        # The following is a reference to a sub tree defined below.
+        Hide (ref)
+    Sub Task 2
+        # Note convergence
+        Hide (ref)
+        # Note cyclic to root task
+        Root Task (ref)
+    # Example of a split sub tree
+    Sub Task 3 (split)
+        Activity 1 (X[C01])
+            Sub-Activity A
+            Sub-Activity B
+        Activity 2
+        Activity 3
+
+include::hide.txt

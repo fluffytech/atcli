@@ -1,0 +1,5 @@
+/env/*
+/.idea/*
+/atcli.egg-info/*
+*.pyc
+*.svg
